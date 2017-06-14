@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/listeCandidats', 'listeCandidatsController@index');
+Route::get('/listeCandidats', 'listeCandidatsController@getCandidats');

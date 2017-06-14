@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class listeCandidatsController extends Controller
 {
@@ -11,10 +12,10 @@ class listeCandidatsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('listeCandidats');
-    }
+     public function getCandidats () {
+         $candidats = User::all();
+         return view('listeCandidats', ['candidats'=>$candidats]);
+     }
 
     /**
      * Show the form for creating a new resource.
