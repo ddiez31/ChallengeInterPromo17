@@ -13,8 +13,16 @@ class listeCandidatsController extends Controller
      * @return \Illuminate\Http\Response
      */
      public function getCandidats () {
-         $candidats = User::all();
-         return view('listeCandidats', ['candidats'=>$candidats]);
+         $candidats = User::All();  // a ce moment nous n'avons pas les roles liés aux utilisateurs donc on ne peux pas faire de difference pour l'instant;
+         //$slugs = User::All()->roles->implode("slug");
+
+         foreach ($users as $user){
+            //  if ($user->roles->implode("slug")=="Can"){
+            //      $candidats[]=$user;
+            //  }
+         }
+
+         return view('listeCandidats', ['candidats',$candidats]);
      }
 
     /**
